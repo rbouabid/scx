@@ -143,4 +143,4 @@ def cosine_between(v1, v2):
 def pion_mass(e1, e2, cos):
     """ Returns the mass of pi0 given gamma energies and angle """
     return np.sqrt(2*e1*e2*(1-cos))
-        
+

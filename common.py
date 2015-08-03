@@ -2,6 +2,7 @@
 
 """Common functions."""
 
+import math
 import numpy as np
 
 detector_length = 90.0
@@ -139,6 +140,16 @@ def cosine_between(v1, v2):
     v2_u = unit_vector(v2)
     cosine = np.dot(v1_u, v2_u)
     return cosine
+
+def neutral_pion_momentum(e1, e2, angle):
+    """ Returns the momentum of the neutral pion.
+
+        'e1' and 'e2' are the energies of the two photons
+        from the neutral pion decay, and 'angle' is the
+        angle between the two photons.
+
+    """
+    return math.sqrt(e1*e1 + e2*e2 + 2*e1*e2*math.cos(angle))
 
 def pion_mass(e1, e2, cos):
     """ Returns the mass of pi0 given gamma energies and angle """
